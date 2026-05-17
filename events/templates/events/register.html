@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Registration</title>
+</head>
+<body>
+  <h1>Event Registration</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+
+    <div>
+      <label>Full Name:</label>
+      {{ form.full_name }}
+      {% if form.full_name.errors %}
+        <p style="color:red;">{{ form.full_name.errors }}</p>
+      {% endif %}
+    </div>
+
+    <div>
+      <label>Email:</label>
+      {{ form.email }}
+      {% if form.email.errors %}
+        <p style="color:red;">{{ form.email.errors }}</p>
+      {% endif %}
+    </div>
+
+    <div>
+      <label>Age:</label>
+      {{ form.age }}
+      {% if form.age.errors %}
+        <p style="color:red;">{{ form.age.errors }}</p>
+      {% endif %}
+    </div>
+
+    <div>
+      <label>Password:</label>
+      {{ form.password }}
+      {% if form.password.errors %}
+        <p style="color:red;">{{ form.password.errors }}</p>
+      {% endif %}
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
